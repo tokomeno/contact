@@ -1,0 +1,90 @@
+.phone__container {
+  width: 500px;
+  margin: auto;
+}
+
+.phone__container .top {
+  padding: 15px 20px;
+  background: #0072c3;
+}
+
+.phone__container .top h4 {
+  color: white;
+  margin: 0;
+  font-size: 22px;
+}
+
+.phone__container .top .top__button {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone__container .top .top__button span {
+  margin: 2px 0;
+  background: white;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.phone__container .main__container {
+  position: relative;
+}
+
+.phone__container .main__container figure {
+  height: 280px;
+  overflow: hidden;
+  background: #494949;
+}
+
+.phone__container .main__container figure img {
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.phone__container .main__container .contact__info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  font-size: 20px;
+}
+
+.phone__container .main__container .contact__info .name {
+  color: white;
+}
+
+.phone__container .main__container .contact__info .phone {
+  color: #666666;
+}
+
+.phone__container .numbers__container {
+  background: #fafafa;
+}
+
+.phone__container .numbers__container .numbers__row {
+  display: flex;
+  border-top: 1px solid #e1e1e1;
+}
+
+.phone__container .numbers__container .numbers__row:last-child {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.phone__container .numbers__container .numbers__row .number_btn {
+  flex: 1;
+  height: 60px;
+  border-right: 1px solid #e1e1e1;
+}
+
+.phone__container .numbers__container .numbers__row .number_btn:first-child {
+  border-left: none;
+}
+
+.phone__container .numbers__container .numbers__row .number_btn:last-child {
+  border-right: none;
+}
+
