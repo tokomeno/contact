@@ -16,13 +16,12 @@ $(".delete__btn").click(function() {
     if (userInput.length >= 2) {
         getNewContacts();
     } else {
-        clearContactInfo();
+        setContactInfo({ name: "", phone: "" });
     }
 });
 
-$(".matches").click(function() {
-    fillFullResultHtml();
-});
+$(".matches").click(fillFullResultHtml);
+
 const getNewContacts = () => {
     axios
         .get("/api/contacts", {
@@ -34,10 +33,12 @@ const getNewContacts = () => {
             let total = res.data.length;
             fullResult = res.data;
             if (total > 0) {
-                $("#name").text(fullResult[0].full_name);
-                $("#phone").text(fullResult[0].phone);
+                setContactInfo({
+                    name: fullResult[0].full_name,
+                    phone: fullResult[0].phone
+                });
             } else {
-                clearContactInfo();
+                setContactInfo({ name: "", phone: "" });
             }
 
             $("#matchesNumber").text(total);
@@ -62,7 +63,7 @@ function fillFullResultHtml() {
     }
 }
 
-function clearContactInfo() {
-    $("#name").text("");
-    $("#phone").text("");
+function setContactInfo(info) {
+    $("#name").text(info.name);
+    $("#phone").text(info.phone);
 }

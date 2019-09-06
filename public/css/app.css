@@ -1,5 +1,5 @@
 .phone__container {
-  width: 450px;
+  width: 385px;
   margin: auto;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .phone__container .input__container .matches {
-  padding-top: 10px;
+  padding-top: 12px;
   width: 20%;
   position: relative;
   text-align: center;
@@ -45,7 +45,7 @@
   content: "";
   position: absolute;
   top: 18%;
-  right: 5px;
+  right: 0px;
   height: 64%;
   border-left: 1px solid #e3e2e3;
 }
@@ -53,7 +53,7 @@
 .phone__container .input__container .input__numbers {
   width: 64%;
   font-size: 34px;
-  line-height: 65px;
+  line-height: 70px;
   text-align: right;
   position: relative;
   padding-right: 12px;
@@ -134,10 +134,10 @@
   flex: 1;
   height: 60px;
   border-right: 1px solid #e1e1e1;
-  text-align: center;
   font-size: 26px;
   position: relative;
   line-height: 60px;
+  padding-left: 45px;
 }
 
 .phone__container .numbers__container .numbers__row .number_btn:first-child {
@@ -147,6 +147,7 @@
 .phone__container .numbers__container .numbers__row .number_btn span {
   font-size: 16px;
   position: absolute;
-  left: 60%;
+  left: 52%;
+  color: #737373;
 }
 
