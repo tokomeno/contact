@@ -11,7 +11,7 @@
     </div>
     <div class="main__container">
         <figure>
-            {{-- <img src="https://www.pngfind.com/pngs/m/110-1102775_download-empty-profile-hd-png-download.png"> --}}
+            <img src="/profile.png">
         </figure>
         <div class="contact__info">
             <div class="name" id="name">
