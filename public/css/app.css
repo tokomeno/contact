@@ -1,5 +1,5 @@
 .phone__container {
-  width: 500px;
+  width: 450px;
   margin: auto;
 }
 
@@ -27,14 +27,69 @@
   border-radius: 50%;
 }
 
+.phone__container .input__container {
+  background: #fafafa;
+  height: 65px;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+}
+
+.phone__container .input__container .matches {
+  padding-top: 10px;
+  width: 20%;
+  position: relative;
+  text-align: center;
+}
+
+.phone__container .input__container .matches::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 5px;
+  height: 64%;
+  border-left: 1px solid #e3e2e3;
+}
+
+.phone__container .input__container .input__numbers {
+  width: 64%;
+  font-size: 34px;
+  line-height: 65px;
+  text-align: right;
+  position: relative;
+  padding-right: 12px;
+}
+
+.phone__container .input__container .input__numbers::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 6px;
+  height: 64%;
+  border-left: 1px solid #e3e2e3;
+}
+
+.phone__container .input__container .delete__btn {
+  display: flex;
+  align-items: center;
+  color: #6b6b6b;
+  justify-content: center;
+  width: 16%;
+}
+
+.phone__container .input__container .delete__btn i {
+  font-size: 32px;
+  vertical-align: middle;
+}
+
 .phone__container .main__container {
   position: relative;
 }
 
 .phone__container .main__container figure {
-  height: 280px;
+  height: 210px;
   overflow: hidden;
   background: #494949;
+  margin: 0;
 }
 
 .phone__container .main__container figure img {
@@ -75,16 +130,23 @@
 }
 
 .phone__container .numbers__container .numbers__row .number_btn {
+  cursor: pointer;
   flex: 1;
   height: 60px;
   border-right: 1px solid #e1e1e1;
+  text-align: center;
+  font-size: 26px;
+  position: relative;
+  line-height: 60px;
 }
 
 .phone__container .numbers__container .numbers__row .number_btn:first-child {
-  border-left: none;
+  border-left: 1px solid #e1e1e1;
 }
 
-.phone__container .numbers__container .numbers__row .number_btn:last-child {
-  border-right: none;
+.phone__container .numbers__container .numbers__row .number_btn span {
+  font-size: 16px;
+  position: absolute;
+  left: 60%;
 }
 

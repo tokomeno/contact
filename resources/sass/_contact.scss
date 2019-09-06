@@ -1,0 +1,133 @@
+.phone__container {
+    width: 450px;
+    margin: auto;
+    .top {
+        padding: 15px 20px;
+        background: #0072c3;
+        h4 {
+            color: white;
+            margin: 0;
+            font-size: 22px;
+        }
+        .top__button {
+            display: flex;
+            flex-direction: column;
+            span {
+                margin: 2px 0;
+                background: white;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+            }
+        }
+    }
+    .input__container {
+        background: rgb(250, 250, 250);
+        height: 65px;
+        border-left: 1px solid rgb(225, 225, 225);
+        border-right: 1px solid rgb(225, 225, 225);
+
+        .matches {
+            padding-top: 10px;
+            width: 20%;
+            position: relative;
+            text-align: center;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 18%;
+                right: 5px;
+                height: 64%;
+                border-left: 1px solid rgb(227, 226, 227);
+            }
+        }
+        .input__numbers {
+            width: 64%;
+            font-size: 34px;
+            line-height: 65px;
+            text-align: right;
+            position: relative;
+            padding-right: 12px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 18%;
+                right: 6px;
+                height: 64%;
+                border-left: 1px solid rgb(227, 226, 227);
+            }
+        }
+        .delete__btn {
+            display: flex;
+            align-items: center;
+            color: rgb(107, 107, 107);
+            justify-content: center;
+            width: 16%;
+            i {
+                font-size: 32px;
+                vertical-align: middle;
+            }
+        }
+    }
+    .main__container {
+        figure {
+            height: 210px;
+            overflow: hidden;
+            background: #494949;
+            margin: 0;
+            img {
+                height: 100%;
+                margin: auto;
+                display: block;
+            }
+        }
+        position: relative;
+        .contact__info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(black, 0.5);
+            padding: 10px 15px;
+            font-size: 20px;
+
+            .name {
+                color: white;
+            }
+            .phone {
+                color: lighten(black, 40%);
+            }
+        }
+    }
+    .numbers__container {
+        background: rgb(250, 250, 250);
+
+        .numbers__row {
+            display: flex;
+            border-top: 1px solid rgb(225, 225, 225);
+            &:last-child {
+                border-bottom: 1px solid rgb(225, 225, 225);
+            }
+
+            .number_btn {
+                cursor: pointer;
+                flex: 1;
+                height: 60px;
+                border-right: 1px solid rgb(225, 225, 225);
+                &:first-child {
+                    border-left: 1px solid rgb(225, 225, 225);
+                }
+                text-align: center;
+                font-size: 26px;
+                position: relative;
+                line-height: 60px;
+                span {
+                    font-size: 16px;
+                    position: absolute;
+                    left: 60%;
+                    // top: 50%;
+                }
+            }
+        }
+    }
+}
