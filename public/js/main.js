@@ -20,6 +20,7 @@ $(".delete__btn").click(function() {
     if (userInput.length >= 2) {
         getNewContacts();
     } else {
+        $("#matchesNumber").text(0);
         setContactInfo({ name: "", phone: "" });
     }
 });
