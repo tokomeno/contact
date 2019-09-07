@@ -3,6 +3,10 @@ let inputNumber = $(".input__numbers");
 let fullResult = [];
 
 $(".number_btn").click(function() {
+    if (userInput.length >= 9) {
+        alert("number has to be less than 9 digits");
+        return;
+    }
     userInput += $(this).data("num");
     updateInputValue();
     if (userInput.length >= 2) {
@@ -30,8 +34,9 @@ const getNewContacts = () => {
             }
         })
         .then(res => {
-            let total = res.data.length;
-            fullResult = res.data;
+            console.log(res);
+            fullResult = res.data.contacts;
+            let total = fullResult.length;
             if (total > 0) {
                 setContactInfo({
                     name: fullResult[0].full_name,

@@ -9,19 +9,51 @@ use App\SearchQuery;
 
 class ContactController extends Controller
 {
-    public function __construct(SearchQuery $searchQuery)
+    public function __construct(SearchQuery $searchQuery, Request $request)
     {
         $this->searchQuery = $searchQuery;
+        $this->request = $request;
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $modelQuery = Contact::where('phone', 'like', '%' . $request->userInput . '%');
+        $words  = $this->searchQuery->generate(str_split($this->request->userInput));
+        // $result = $this->sqlWhereLike($words);
 
-        foreach ($this->searchQuery->generate($request->userInput)  as $q) {
+        $result = $this->searchInCollection($words, $this->request->userInput);
+
+        return response()->json([
+            'contacts' => $result
+        ]);
+    }
+
+
+
+    protected function searchInCollection(array $words, $numbers)
+    {
+        return Contact::get()->filter(function ($item) use ($words, $numbers) {
+            $match = false;
+            if (false !== stristr($item->phone, $numbers)) {
+                return true;
+            }
+            foreach ($words as $w) {
+                if (false !== stristr($item->full_name, $w)) {
+                    $match = true;
+                    break;
+                }
+            }
+            return $match;
+        })->values();
+    }
+
+
+
+    protected function sqlWhereLike(array $words)
+    {
+        $modelQuery = Contact::where('phone', 'like', '%' . $this->request->userInput . '%');
+        foreach ($words  as $q) {
             $modelQuery->orWhere('full_name', 'like', '%' . $q . '%');
         }
-
-        return $modelQuery->take(3)->get();
+        return $modelQuery->get();
     }
 }
